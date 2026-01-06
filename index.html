@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="th-en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Dashborad Server service central</title>
-    <script src="https://authpro.com/authpro.js">
-    </script>
-    <script>
-      authpro.require({ level: 1 });
-    </script>
-  </head>
-  <body>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.authpro.com/authpro.js"></script>
+<script>
+  authpro.require({ level: 1 });
+</script>
+</head>
+<body>
 
-    <h1> Dashboard KP9 </h1>
-    <p> welcome</p>
+<nav>
+  <span>Org Portal</span>
+  <a href="logout.html">Logout</a>
+</nav>
 
-    <ul>
-      <li> <a href="profile.html">Emplyee info</a>a></li>
-    </ul>
-      <li> <a href="admin.html">Manager controlr</a>a></li>
-    </ul>
-      <li> <a href="logout.html">LOGOUT</a>a></li>
-    </ul>
+<div class="container">
+  <h1>Dashboard</h1>
+  <p>ยินดีต้อนรับ <b id="user"></b></p>
 
-    
-  </body>
+  <div class="grid">
+    <a class="box" href="profile.html">👤 โปรไฟล์</a>
+    <a class="box" href="admin.html">🛡️ Admin</a>
+  </div>
+</div>
+
+<script>
+  document.getElementById("user").innerText = authpro.username();
+</script>
+
+</body>
 </html>
