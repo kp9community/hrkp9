@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <script src="https://www.authpro.com/authpro.js"></script>
+  <script>
+    authpro.require({ level: 1 });
+  </script>
+</head>
+<body>
+
+<h2>ข้อมูลพนักงาน</h2>
+
+<p><b>Username:</b> <span id="user"></span></p>
+<p><b>ตำแหน่ง:</b> พนักงาน</p>
+
+<script>
+  document.getElementById("user").innerText = authpro.username();
+</script>
+
+<a href="index.html">← กลับหน้าหลัก</a>
+
+</body>
+</html>
