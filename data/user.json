@@ -19,10 +19,10 @@
     "org": "Global Services",
     "email": "admin@company.com"
   },
-  "teststaff": {
-    "fullname": "test staff",
-    "role": "Staff",
-    "org": "Server A",
-    "email": "staff01@company.com"
+  "pond": {
+    "fullname": "HOE pond",
+    "role": "Head Of Entertainment & PR",
+    "org": "KP9Community",
+    "email": "kp9.head.en@outlook.co.th"
   }
 }
