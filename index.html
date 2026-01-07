@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>Dashboard</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://www.authpro.com/authpro.js"></script>
-<script>
-  authpro.require({ level: 1 });
-</script>
+  <meta charset="UTF-8">
+  <title>MGS | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <span>Org Portal</span>
-  <a href="logout.html">Logout</a>
-</nav>
-
 <div class="container">
-  <h1>Dashboard</h1>
-  <p>ยินดีต้อนรับ <b id="user"></b></p>
+  <header class="header">
+    <h1>Manager Global Services</h1>
+    <p id="welcome"></p>
+  </header>
 
-  <div class="grid">
-    <a class="box" href="profile.html">👤 โปรไฟล์</a>
-    <a class="box" href="admin.html">🛡️ Admin</a>
-  </div>
+  <section class="card">
+    <h2>เมนูระบบภายใน</h2>
+    <div class="buttons">
+      <a id="profileLink" class="btn primary">ข้อมูลของฉัน</a>
+      <a id="staffLink" class="btn secondary">รายชื่อพนักงาน</a>
+    </div>
+  </section>
 </div>
 
-<script>
-  document.getElementById("user").innerText = authpro.username();
-</script>
-
+<script src="app.js"></script>
 </body>
 </html>
