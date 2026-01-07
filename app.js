@@ -30,5 +30,5 @@ fetch("data/users.json")
 
 // Logout กลับ AuthPro
 document.getElementById("logoutBtn").onclick = () => {
-  window.location.href = "https://authpro.com/logout";
+  window.location.href = "https://www.authpro.com/auth/100000/?action=logout";
 };
