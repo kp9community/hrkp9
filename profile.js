@@ -1,18 +1,24 @@
 const params = new URLSearchParams(window.location.search);
-const username = params.get("username");
+const name = params.get("name") || "ผู้ใช้งาน";
 
 fetch("data/users.json")
   .then(r => r.json())
   .then(users => {
-    const user = users[username];
+    const user = users[name];
+
+    document.getElementById("name").textContent = name;
 
     if (!user) {
-      document.body.innerHTML = "<h2>ไม่พบข้อมูลผู้ใช้</h2>";
+      document.getElementById("role").textContent = "ตำแหน่ง: -";
+      document.getElementById("org").textContent = "หน่วยงาน: -";
+      document.getElementById("email").textContent = "Email: -";
       return;
     }
 
-    document.getElementById("name").textContent = user.fullname;
-    document.getElementById("role").textContent = "ตำแหน่ง: " + user.role;
-    document.getElementById("org").textContent = "หน่วยงาน: " + user.org;
-    document.getElementById("email").textContent = "Email: " + user.email;
+    document.getElementById("role").textContent =
+      "ตำแหน่ง: " + user.role;
+    document.getElementById("org").textContent =
+      "หน่วยงาน: " + user.org;
+    document.getElementById("email").textContent =
+      "Email: " + user.email;
   });
