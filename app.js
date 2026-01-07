@@ -1,6 +1,8 @@
+
+
 const params = new URLSearchParams(window.location.search);
 
-// รับชื่อจาก AuthPro
+// รับชื่อจาก AuthPro (ใช้ name)
 const name =
   params.get("name") ||
   params.get("username") ||
@@ -10,11 +12,11 @@ const name =
 document.getElementById("welcome").textContent =
   `ยินดีต้อนรับ ${name}`;
 
-// ✅ ตั้ง href ทันที (ไม่รอ fetch)
+// ✅ ลิงก์ต้องชี้ภายใน repo hrkp9
 document.getElementById("profileBtn").href =
   `profile.html?name=${encodeURIComponent(name)}`;
 
-// โหลด role จาก JSON (เพื่อแสดงปุ่ม Manager)
+// โหลด role จาก JSON (เพื่อแยก Manager / Staff)
 fetch("data/users.json")
   .then(r => r.json())
   .then(users => {
@@ -24,16 +26,17 @@ fetch("data/users.json")
       const managerBtn = document.getElementById("managerBtn");
       managerBtn.style.display = "block";
       managerBtn.textContent = "Dashboard ผู้จัดการ";
-      managerBtn.href = "#"; // หรือหน้า manager.html ในอนาคต
+      managerBtn.href = "#"; // ไว้ทำ manager.html ทีหลัง
     }
   })
   .catch(() => {
-    // ถ้าโหลด JSON ไม่ได้ ก็ยังใช้งานปกติ
-    console.log("โหลดข้อมูล role ไม่ได้ แต่ระบบยังใช้งานได้");
+    console.log("โหลด role ไม่ได้ แต่ระบบยังใช้งานได้");
   });
 
-// Logout กลับ AuthPro
+// 🔴 Logout กลับ AuthPro (สำคัญ)
 document.getElementById("logoutBtn").onclick = () => {
-  window.location.href = "https://www.authpro.com/auth/100000/?action=logout";
+  window.location.href =
+    "https://www.authpro.com/auth/100000/?action=logout"; // 👈 ใส่ logout URL จริงของ AuthPro
 };
+
 
