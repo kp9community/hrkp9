@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>Profile</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://www.authpro.com/authpro.js"></script>
-<script>
-  authpro.require({ level: 1 });
-</script>
+  <meta charset="UTF-8">
+  <title>ข้อมูลพนักงาน</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html">← Dashboard</a>
-</nav>
-
 <div class="container">
-  <h2>ข้อมูลพนักงาน</h2>
-  <p><b>Username:</b> <span id="u"></span></p>
-  <p><b>Role:</b> Staff</p>
+  <h1>ข้อมูลของฉัน</h1>
+
+  <div class="card">
+    <h2 id="name"></h2>
+    <p id="role"></p>
+    <p id="org"></p>
+    <p id="email"></p>
+  </div>
+
+  <a href="index.html" class="btn outline">← กลับ</a>
 </div>
 
-<script>
-  document.getElementById("u").innerText = authpro.username();
-</script>
-
+<script src="profile.js"></script>
 </body>
 </html>
