@@ -1,0 +1,28 @@
+{
+  "inkoceana": {
+    "fullname": "Inkoceana Manager",
+    "role": "Manager",
+    "org": "Global Services",
+    "email": "admin@company.com"
+  },
+  "staff01": {
+    "fullname": "Staff One",
+    "role": "Staff",
+    "org": "Server A",
+    "email": "staff01@company.com"
+  }
+}
+{
+  "inkoceana": {
+    "fullname": "Global Manager",
+    "role": "Exclutive",
+    "org": "Global Services",
+    "email": "admin@company.com"
+  },
+  "teststaff": {
+    "fullname": "test staff",
+    "role": "Staff",
+    "org": "Server A",
+    "email": "staff01@company.com"
+  }
+}
